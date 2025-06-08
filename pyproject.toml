@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "autowriter-mcp"
+version = "0.2.0"
+description = "Token-saving MCP server for coordinating automated writing workflows between Obsidian vaults and LMStudio"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "autowriter-mcp contributors"}
+]
+keywords = ["mcp", "obsidian", "lmstudio", "writing", "automation", "ai"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Text Processing",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.27.0",
+    "pathlib",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0",
+    "mypy>=1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/infinitimeless/autowriter-mcp"
+Repository = "https://github.com/infinitimeless/autowriter-mcp"
+Issues = "https://github.com/infinitimeless/autowriter-mcp/issues"
+
+[project.scripts]
+autowriter-mcp = "autowriter_mcp.server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+autowriter_mcp = ["*.md", "*.txt"]
+
+[tool.black]
+line-length = 88
+target-version = ['py311', 'py312', 'py313']
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
