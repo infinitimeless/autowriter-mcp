@@ -1,6 +1,6 @@
 # Autowriter MCP Server
 
-A token-saving Model Context Protocol (MCP) server that coordinates automated writing workflows between Obsidian vaults and LMStudio. This server enables AI-powered content generation while dramatically reducing Claude token usage by generating content locally via LMStudio and saving directly to Obsidian vaults.
+A token-saving Model Context Protocol (MCP) server that coordinates automated writing workflows between Obsidian vaults and LMStudio or Gemini free API. Automatic fallback to Gemini API when LMStudio is unavailable. This server enables AI-powered content generation while dramatically reducing Claude token usage by generating content locally via LMStudio or Gemini Free API and saving directly to Obsidian vaults.
 
 ## 🚀 Key Features
 
